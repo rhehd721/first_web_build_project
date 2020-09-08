@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+{% static 'css/about.css' %}
+{% endblock %} 
+
+{% block title %}
+About Page
+{% endblock %}
+
+{% block content %}
+
+<input id="rotated" type="checkbox" name="rotated" checked><label for="rotated">Rotate</label>
+
+<form>
+	<h3 data-text="Choose Your developer">about</h3>
+	<label data-text="📝">
+        <p>📝여러분이 쓰신 일기장을</p>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+    </label>  
+    <label data-text="📒">
+        <p>📒책으로 만들어서</p>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+    </label>  
+    <label data-text="📦">
+        <p>📦집으로 보내드립니다</p>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+</form>
+
+
+ <!--developer-->   
+<form>
+	<h3 data-text="Choose Your developer">developer🦁</h3>
+	<label data-text="minsgy">
+        <input type="radio" name="developer" value="minsgy">
+        <a href="https://github.com/minsgy" target="_blank">
+            minsgy
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="thalals">
+        <input type="radio" name="developer" value="thalals">
+        <a href="https://github.com/thalals" target="_blank">
+            thalals
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="qhahd78">
+        <input type="radio" name="developer" value="qhahd78">
+        <a href="https://github.com/qhahd78" target="_blank">
+            qhahd78
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+	</label>
+	<label data-text="rhehd721">
+        <input type="radio" name="developer" value="rhehd721">
+        <a href="https://github.com/rhehd721" target="_blank">
+            rhehd721
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+    </label>
+    
+    <label data-text="bini0519">
+        <input type="radio" name="developer" value="bini0519">
+        <a href="https://github.com/bini0519" target="_blank">
+            bini0519
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+    </label>
+
+    <label data-text="mseo39">
+        <input type="radio" name="developer" value="mseo39">
+        <a href="https://github.com/mseo39" target="_blank">
+            mseo39
+        </a>
+		<span class="dot"></span>
+		<span class="dot-shadow"></span>
+    </label>
+    
+</form>
+{% endblock %}

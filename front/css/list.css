@@ -1,0 +1,367 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  }
+
+html, body {
+  height: 100%;
+  
+  }
+
+.date_memo{
+  position: fixed;
+  right:10px;
+}
+
+::-webkit-scrollbar {width:12px}
+::-webkit-scrollbar-thumb {background: #222;}
+::-webkit-scrollbar-track {background: transparent}
+
+
+::selection {
+  background: #222;
+  color: white;
+  }
+::-moz-selection {
+  background: #222;
+  color: white;
+  }
+  
+
+body * {
+  transform-style: preserve-3d; /* am i doing this wrong? */
+}
+
+body {
+  color: #222;
+  /*font-family: 'Gabriela', serif;*/
+  perspective: 70em;/*in your face*/
+	overflow-y: hidden;
+  }
+
+h1, p {
+  margin: 5% 0;
+  }
+
+
+.book {
+  height: 80%;
+  max-height: 500px;
+  min-height: 300px;
+  width: 800px;
+  background-image: 
+    linear-gradient(
+      90deg,
+      hsla(30,40%,50%,.6),
+      hsla(30,40%,20%,.9),
+      hsla(30,40%,50%,.4) 90%
+      ),
+    url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  margin: auto;
+  
+  border: 3px solid hsla(30,10%,20%,1);
+  border-radius: 5px;
+  box-shadow: 0 0 150px hsla(170,0%,0%,.4);
+  }
+
+.page {
+  height: 100%;
+  width: 50%;
+	line-height: 1.5;
+  border-right: 10px solid transparent;
+  position: absolute;
+  top: 0; right: 0;
+  transform-origin: 0 50%;
+  transition: .8s;
+  /*animation: unflip .3s linear;*/
+  }
+  [class*='side'] {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: beige;
+    background-size: 100% 100%;
+    backface-visibility: hidden;
+    overflow: auto;
+    padding: 5% 8%;
+    }
+  .side-1 {
+    z-index: 2;
+    box-shadow: inset 50px 0 50px rgba(0,0,0,.5);
+    transition: .5s;
+    }
+  .side-2 {
+    transform:
+      rotateY(180deg);
+    box-shadow: inset -50px 0 50px rgba(0,0,0,.5);
+    }
+  .flipped > .side-1 {
+    box-shadow: inset 300px 0 50px rgba(0,0,0,.8);   
+    transition: .6s;
+    }
+  .flipped > [class*='side'] {
+    pointer-events: auto;
+    }
+.page:after {
+  width: 100px;
+  height: 50px;
+  background-color: #555;
+  position: absolute;
+  top: 0; bottom: 0; right: -100px;
+  margin: auto;
+  color: white;
+  text-shadow: 0 -1px 0 #222;
+  line-height: 50px;
+  text-align: center;
+  /*font-family: monospace;*/
+  content: '>>>';
+  animation: hide .8s linear;
+  }
+  .page.flipped:after {
+    content: '<<<';
+    transform:
+      rotateY(180deg);
+    pointer-events: auto;
+    }
+  /* to hide on flip animation */
+  @keyframes hide {
+    0% {opacity: 0;}
+    85% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+.flipped {
+  transform:
+    rotateY(-180deg);
+  pointer-events: none;
+  /*animation: flip .3s linear;
+  animation-fill-mode: forwards;*/
+  }
+  
+.no-anim,
+  .no-anim:after {
+  animation: none;/* disable animation when page loads */
+  }
+@keyframes flip {
+  to {
+    transform:
+      rotateY(-180deg);    
+    }
+  }
+@keyframes unflip {
+  from {
+    transform:
+      rotateY(-180deg);    
+    }
+  to {
+    transform:
+      rotateY(0deg);    
+    }
+  }
+
+.btn10{
+  padding: 15px 50px;
+  /* margin:10px 4px; */
+  color: black;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: fixed;
+  text-decoration: none;
+  display:inline-block;
+  
+}
+.btn10{
+  top: 10px;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase!important;
+  letter-spacing: 2px;
+  color: #2e4e2c ;
+  cursor: hand;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid #2e4e2c ;
+  border-radius:50px;
+  position: fixed;
+  right: 10px;
+  /* top: 600px; */
+
+  overflow: hidden!important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: transparent!important;
+  z-index:10; 
+}
+
+.btn10:hover{
+  border: 1px solid #071982;
+  color: #F5F2A8!important;
+}
+.btn10::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #c2ae6c ;
+  position: absolute;
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg); 
+  transform: skewX(-20deg);   
+  left: -10%;
+  opacity: 1;
+  top: 0;
+  z-index: -12;
+  -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+-o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+-webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+   box-shadow:2px 0px 14px rgba(0,0,0,.6);
+} 
+
+.btn10::after {
+  content: '';
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #F5F2A8;
+  position: absolute;
+-ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg); 
+  transform: skewX(-20deg);   
+  left: -10%;
+  opacity: 0;
+  top: 0;
+  z-index: -15;
+  -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+  -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+}
+.btn10:hover::before, .btn1O:hover::before{
+opacity:1;
+width: 116%;
+}
+.btn10:hover::after, .btn1O:hover::after{
+opacity:1;
+width: 120%;
+}
+
+@import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
+
+.form-group:first-child, .form-group:first-child {
+    width:80%;
+}
+.form-group:nth-child(2), .form-group:nth-child(2) {
+    width:18%;
+}
+.form-group * {
+    width:100%;
+}
+
+/* <- Demo Stuff Start */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+ }
+
+
+ .tip {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid rgb(170, 168, 145);
+}
+
+.tip-up {
+  top: -25px; /* Same as body margin top + border */
+  left: 10px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+
+.dialogbox .comment {
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  margin: 20px 10px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 2px solid rgb(170, 168, 145);
+}
+
+.comment .message {
+  min-height: 30px;
+  border-radius: 3px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  color: black;
+}
+
+.message textarea {
+  border: none;
+  height: auto;
+
+  font-size: 0.875em;
+  width: 300px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  
+  background: transparent;
+  outline: none;
+  color: rgb(158, 155, 140) ;
+
+}
+
+.message input:focus{
+  outline:none;
+}
+
+.message input{
+  background: transparent;
+  position: relative;
+  left:250px;
+}
+
+#center{
+  text-align: center;
+}
+
+
+.btn_go{
+  background: transparent;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}

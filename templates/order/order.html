@@ -1,0 +1,90 @@
+  <!-- 주문 및 커스텀 페이지입니다 -->
+  <!-- 질의 : 박병호 -->
+  
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+{% static 'css/order.css' %}"
+{% endblock %}
+
+{% block title %}
+주문
+{% endblock %}
+
+{% block content %}
+
+  <body>
+      <div class="flex">
+
+          <div>
+
+              <canvas id="jsCanvas" class="canvas"></canvas>
+              <div class="controls">
+                  <div class="filebox">
+                      <label for="ex_file">이미지불러오기</label>
+                      <input type="file" id="ex_file">
+                  </div>
+                  <!-- <div class="controls_colors" id="jsColors">
+                      <div class="controls_color" style="background-color : #2c2c2c"></div>
+                      <div class="controls_color" style="background-color : white"></div>
+                      <div class="controls_color" style="background-color : #ff3b30"></div>
+                      <div class="controls_color" style="background-color : #ff9500"></div>
+                      <div class="controls_color" style="background-color : #ffcc00"></div>
+                      <div class="controls_color" style="background-color : #4cd063"></div>
+                      <div class="controls_color" style="background-color : #5ac8fa"></div>
+                      <div class="controls_color" style="background-color : #0579ff"></div>
+                      <div class="controls_color" style="background-color : #5856d6"></div>
+                  </div> -->
+              </div>
+          </div>
+
+          <div>
+
+              <form>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">이름</label>
+                  </div>
+                  <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">배송지</label>
+                  </div>
+                  <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">책제목</label>
+                  </div>
+                  <div class="form__group field">
+                    <input type="number" class="form__field" placeholder="Name" id='book' value="" numberOnly/>
+                    <label for="name" class="form__label">주문건수</label>
+                  </div>
+                  <div class="form__group field">
+                    <input type="text" class="form__field" placeholder="Name" id='name' required />
+                    <label for="name" class="form__label">페이지범위</label>
+                  </div>
+                  
+                  <br>
+                  <br>
+                  <div >
+                  <!-- <div class="price" id="price"> -->
+                        <p class="price" id="prices">price</p>
+                  </div>
+              </form>
+              <div class="container">
+                  <a href="{% url 'payment' %}" class="btn btn-3">주문하기</a>
+              </div>
+          </div>
+
+      </div>
+
+      {% block js %}
+      <script src="js/order.js"></script>
+      {% endblock js %}
+      
+
+      
+  </body>
+
+  </html>
+
+  {% endblock %}

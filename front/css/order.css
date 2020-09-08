@@ -1,0 +1,219 @@
+@import "css/reset.css";
+
+/* cavas 관련 */
+
+body {
+    /* background-color: #f6f9fc; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding: 50px;
+}
+
+.canvas {
+    width: 500px;
+    height: 700px;
+    background-image: url("/static/admin/img/book.png");
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #5cb85c;
+    cursor: pointer;
+    border: 1px solid #4cae4c;
+    border-radius: .25em;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+    background-color: #AEE9B2;
+}
+
+.filebox label:active {
+    background-color: #58AA55;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.controls .controls_colors {
+    display: flex;
+    margin-top: 30px;
+}
+
+.controls_colors .controls_color {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.controls .controls_rango {
+    margin-bottom: 30px;
+}
+
+
+
+/* 입력창 css */
+form {
+    padding: 2em;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 30px;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+  }
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+/* 입력창 css종료 */
+
+
+/* 컨버스랑 주문입력창 나란히 */
+.flex {
+    display: flex;
+}
+
+
+/* 주문하기 버튼 css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 20vw;
+    margin: 0 auto;
+    min-height: 50vh;
+    margin-left: 50px;
+}
+
+.btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+}
+
+
+
+.btn-3 {
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    text-decoration: none;
+}
+
+/* 가격 css */
+.price{
+    margin-top: 90px;
+    text-align: center;
+    font-size: 40px;
+    color: #58AA55;
+}
+
+
+
+/* 가격표시 */
+
+
+p {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 30px;
+  }
+  
+

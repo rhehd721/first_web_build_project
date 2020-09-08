@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/join.css">
+    <title>로그인회원가입</title>
+</head>
+
+<body>
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+
+            <div class="cont_login">
+                <div class="cont_info_log_sign_up">
+                    <div class="col_md_login">
+                        <div class="cont_ba_opcitiy">
+
+                            <h2>로그인</h2>
+                            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                        </div>
+                    </div>
+                    <div class="col_md_sign_up">
+                        <div class="cont_ba_opcitiy">
+                            <h2>회원가입</h2>
+
+                            <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cont_back_info">
+                    <div class="cont_img_back_grey">
+
+                    </div>
+
+                </div>
+                <div class="cont_forms">
+
+                    <div class="cont_form_login">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>로그인</h2>
+                        <input type="text" placeholder="아이디를 입력하세요." />
+                        <input type="password" placeholder="비밀번호를 입력하세요" />
+                        <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                    </div>
+
+                    <div class="cont_form_sign_up">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>회원가입</h2>
+                        <input type="text" placeholder="아이디를 입력하세요.">
+                        <input type="text" placeholder="비밀번호를 입력하세요." />
+                        <input type="text" placeholder="비밀번호를 다시 한 번 입력하세요." />
+
+                        <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/join.js"></script>
+
+</html>

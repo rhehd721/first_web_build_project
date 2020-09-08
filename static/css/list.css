@@ -1,0 +1,379 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.date_memo {
+  position: fixed;
+  right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 12px
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent
+}
+
+::selection {
+  background: #222;
+  color: white;
+}
+
+::-moz-selection {
+  background: #222;
+  color: white;
+}
+
+body * {
+  transform-style: preserve-3d;
+  /* am i doing this wrong? */
+}
+
+body {
+  background:
+    radial-gradient(hsla(199, 40%, 90%, .7),
+      hsla(0, 0%, 100%, 0)) no-repeat,
+    linear-gradient(60deg,
+      #58AA55,
+      #AEE9B2,
+      #F5F2A8);
+  color: #222;
+  /*font-family: 'Gabriela', serif;*/
+  perspective: 70em;
+  /*in your face*/
+  overflow-y: hidden;
+}
+
+h1,
+p {
+  margin: 5% 0;
+}
+
+.book {
+
+  height: 80%;
+  max-height: 500px;
+  min-height: 300px;
+  width: 800px;
+  background-image:
+    linear-gradient(90deg,
+      hsla(30, 40%, 50%, .6),
+      hsla(30, 40%, 20%, .9),
+      hsla(30, 40%, 50%, .4) 90%),
+    url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+  position: relative;
+  float: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  border: 3px solid hsla(30, 10%, 20%, 1);
+  border-radius: 5px;
+  box-shadow: 0 0 150px hsla(170, 0%, 0%, .4);
+}
+
+.page {
+  height: 100%;
+  width: 50%;
+  line-height: 1.5;
+  border-right: 10px solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: 0 50%;
+  transition: .8s;
+  /*animation: unflip .3s linear;*/
+}
+
+[class*='side'] {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: beige;
+  background-size: 100% 100%;
+  backface-visibility: hidden;
+  overflow: auto;
+  padding: 5% 8%;
+}
+
+.side-1 {
+  z-index: 2;
+  box-shadow: inset 50px 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+}
+
+.side-2 {
+  transform:
+    rotateY(180deg);
+  box-shadow: inset -50px 0 50px rgba(0, 0, 0, .5);
+}
+
+.flipped>.side-1 {
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, .8);
+  transition: .6s;
+}
+
+.flipped>[class*='side'] {
+  pointer-events: auto;
+}
+
+.page:after {
+  width: 100px;
+  height: 50px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100px;
+  margin: auto;
+  color: white;
+  text-shadow: 0 -1px 0 #222;
+  line-height: 50px;
+  text-align: center;
+  /*font-family: monospace;*/
+  content: '다음장';
+  animation: hide .8s linear;
+}
+
+.page.flipped:after {
+  content: '이전장';
+  transform:
+    rotateY(180deg);
+  pointer-events: auto;
+}
+
+/* to hide on flip animation */
+@keyframes hide {
+  0% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.flipped {
+  transform:
+    rotateY(-180deg);
+  pointer-events: none;
+  /*animation: flip .3s linear;
+  animation-fill-mode: forwards;*/
+}
+
+.no-anim,
+.no-anim:after {
+  animation: none;
+  /* disable animation when page loads */
+}
+
+@keyframes flip {
+  to {
+    transform:
+      rotateY(-180deg);
+  }
+}
+
+@keyframes unflip {
+  from {
+    transform:
+      rotateY(-180deg);
+  }
+
+  to {
+    transform:
+      rotateY(0deg);
+  }
+}
+
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::placeholder,
+textarea::focus:placeholder {
+  color: #bbb5af;
+}
+
+input::-ms-placeholder,
+textarea::-ms-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-ms-placeholder,
+textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+
+/* on hover placeholder */
+
+input:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-webkit-input-placeholder,
+textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::-moz-placeholder,
+textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-moz-placeholder,
+textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::placeholder,
+textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::placeholder,
+textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::placeholder,
+textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-ms-placeholder,
+textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+
+
+#form {
+  position: relative;
+  width: 300px;
+  margin: 50px auto 100px auto;
+}
+
+input {
+  font-size: 0.875em;
+  width: 300px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+
+  background: transparent;
+  outline: none;
+  color: black;
+
+  border: solid 1px #3f342c;
+  border-bottom: none;
+
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+
+textarea {
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  padding: 15px;
+
+  background: transparent;
+  outline: none;
+
+  color: #726659;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+
+  border: solid 1px #3f342c;
+
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+
+#submit {
+  background-color: #AEE9B2;
+  width: 300px;
+
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: black;
+
+  outline: none;
+  cursor: pointer;
+
+  border: solid 1px #3f342c;
+  border-top: none;
+}
+
+#submit:hover {
+  color: black;
+}

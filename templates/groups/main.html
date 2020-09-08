@@ -1,0 +1,42 @@
+<!-- 메인 페이지입니다 -->
+<!-- 질의 : 박병호 -->
+
+{% extends "../base.html" %}
+{% load static %}
+
+{% block css %}
+{% static 'css/main.css' %}
+{% endblock %} 
+
+{% block content %}
+
+    <div class="flex">
+
+        {% for group in groups %}
+        <div class="my_book">
+            <a href="{% url 'detail' %}">
+                <!-- <ul class='list-inline'> -->
+                <li class='book'>
+                    <img src='{{group.image.url}}' alt="책없음" />
+                </li>
+            </a>
+            <p> {{group.name}}</p>
+        </div>
+        {% endfor %}
+
+        <div class="my_book">
+            <a href="{% url 'group_create' %}">
+                <li class='book'>
+                    <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
+                </li>
+                <!-- </ul> -->
+            </a>
+            <p> 새책만들기</p>
+        </div>
+
+    </div>
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

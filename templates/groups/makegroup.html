@@ -1,0 +1,20 @@
+{% extends "../base.html" %} 
+{% load static %} 
+{% block css %} {% static 'css/makegroup.css' %} {% endblock %} 
+{% block title %} group 생성 {% endblock %} 
+{% block content %}
+    <!-- <img src="image/minilogo.png"> -->
+    <form method="POST" action="{% url 'group_create' %}">
+      {% csrf_token %}
+        <div>
+          <h1>그룹을 생성해보세요.</h1>
+          <!-- <img src="image/minilogo.png"> -->
+          <input name='name' type="text" class="form-control boxcontrol" placeholder="그룹 이름을 입력해주세요." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="fileUpload btn btn-outline-success">
+              <span>사진 선택</span>
+              <input name='image' type="file" class="upload" required/>
+            </div>
+            <button type="submit" class="btn btn-success button2">그룹 생성</button>
+        </div>
+    </form>
+{% endblock %}

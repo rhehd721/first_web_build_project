@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+{% static 'css/create.css' %}"
+{% endblock %}
+
+{% block title %}
+일기장
+{% endblock %}
+
+{% block content %}
+
+	<form class="note" action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+		<input id="date" type="date" name = "date" placeholder="날짜"><br />
+		<input id="writer" type="text" name = "user" placeholder="작성자"><br /><br />
+		<input id="title" type="text" name = "title" placeholder="제목"><br /><br />
+		<textarea id="message" type="text" name="message" placeholder="내용">
+        </textarea>
+		<input id="submit" type="submit" value="기록하기">
+
+	</form>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff%27') format('woff');
+    font-weight: normal;
+	font-style: normal;
+}
+
+
+
+body{
+	background-color: white ;
+	text-align: center;
+}
+
+/* 그룹생성 글씨  */
+h1{ 
+	text-align: center;
+	margin-top: 170px;
+	/* margin-right: -10px; */
+	color: black;
+	/* 'Sunflower', sans-serif; */
+}
+
+/* input 박스  */
+input { 
+	margin-top: 30px;
+	margin-left: 420px;
+	margin-bottom: 30px;
+}
+
+.form-control {
+	text-align: center;
+	width: 450px;
+	outline: none;
+
+}
+
+.box-control{ /*인풋박스 위치 조정*/
+	text-align: center;
+	padding-left: 300px;
+}
+
+/* 그룹 생성 버튼 크기, 폰트 */
+.button2 { 
+	width: 100px;
+	height: 37px;
+	border-radius: 4px;
+	font-size: 15px;
+	border-color: #58AA55 
+	
+}
+
+/* 로고 */
+/* img { 
+	width: 80px; 
+	height: 120px;
+} */
+
+/* 
+파일선택 디자인 */
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
